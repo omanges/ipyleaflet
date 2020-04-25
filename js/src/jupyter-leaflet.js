@@ -9,6 +9,7 @@ var awesomeicon = require('./layers/AwesomeIcon.js');
 var popup = require('./layers/Popup.js');
 var rasterlayer = require('./layers/RasterLayer.js');
 var tilelayer = require('./layers/TileLayer.js');
+var vectortilelayer = require('./layers/VectorTileLayer.js');
 var localtilelayer = require('./layers/LocalTileLayer.js');
 var wmslayer = require('./layers/WMSLayer.js');
 var imageoverlay = require('./layers/ImageOverlay.js');
@@ -45,6 +46,7 @@ var map = require('./Map.js');
 
 // Load css
 require('leaflet/dist/leaflet.css');
+require('leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'); // Re-uses images from ~leaflet package
 require('leaflet-draw/dist/leaflet.draw.css');
 require('leaflet.markercluster/dist/MarkerCluster.css');
 require('leaflet.markercluster/dist/MarkerCluster.Default.css');
@@ -54,10 +56,6 @@ require('leaflet.awesome-markers/dist/leaflet.awesome-markers.css');
 require('spin.js/spin.css');
 require('./jupyter-leaflet.css');
 
-// Forcibly load the marker icon images to be in the bundle.
-require('leaflet/dist/images/marker-shadow.png');
-require('leaflet/dist/images/marker-icon.png');
-require('leaflet/dist/images/marker-icon-2x.png');
 
 //Exports
 module.exports = {
@@ -70,6 +68,7 @@ module.exports = {
     LeafletPopupView : popup.LeafletPopupView,
     LeafletRasterLayerView : rasterlayer.LeafletRasterLayerView,
     LeafletTileLayerView : tilelayer.LeafletTileLayerView,
+    LeafletVectorTileLayerView : vectortilelayer.LeafletVectorTileLayerView,
     LeafletLocalTileLayerView : localtilelayer.LeafletLocalTileLayerView,
     LeafletWMSLayerView : wmslayer.LeafletWMSLayerView,
     LeafletImageOverlayView : imageoverlay.LeafletImageOverlayView,
@@ -109,6 +108,7 @@ module.exports = {
     LeafletPopupModel : popup.LeafletPopupModel,
     LeafletRasterLayerModel : rasterlayer.LeafletRasterLayerModel,
     LeafletTileLayerModel : tilelayer.LeafletTileLayerModel,
+    LeafletVectorTileLayerModel : vectortilelayer.LeafletVectorTileLayerModel,
     LeafletLocalTileLayerModel : localtilelayer.LeafletLocalTileLayerModel,
     LeafletWMSLayerModel : wmslayer.LeafletWMSLayerModel,
     LeafletImageOverlayModel : imageoverlay.LeafletImageOverlayModel,
